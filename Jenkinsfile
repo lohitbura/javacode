@@ -1,13 +1,29 @@
-node {
-    timestamps {
-       stage "Code Build"
-       echo "Stage 1 done"
-       
-       stage "Testing"
-       echo "Testing Completed"
-       
-       stage "Final"
-       echo "success"
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
         
+        stage('Build'){
+            steps{
+                echo 'Building code'
+            }
+        }
+        
+        stage('Testing'){
+            steps{
+                echo 'Testing Code'
+            }
+        }
+        
+        stage('Final'){
+            steps{
+                echo 'Finalize'
+            }
+        }
     }
 }
